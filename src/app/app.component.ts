@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router'; // Import Router
+import { CoreService } from './core/core.service';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +32,8 @@ export class AppComponent implements OnInit {
   constructor(
     private _dialog: MatDialog, 
     private _userService: UserService,
-    private router: Router // Inject Router
+    private router: Router,
+    private _coreService: CoreService
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +41,14 @@ export class AppComponent implements OnInit {
   }
 
   openAddEditUserForm() {
-    this._dialog.open(UserAddEditComponent);
+    const dialogRef = this._dialog.open(UserAddEditComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+        this.getUserList();
+        }
+      }
+    })
   }
 
   getUserList() {
@@ -64,8 +73,32 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // New method to handle row click
   openUserDetail(userId: string): void {
     this.router.navigate(['/users', userId]);
+  }
+
+  deleteUser(id: number) {
+    this._userService.deleteUser(id).subscribe({
+      next: (res) => {
+        this._coreService.openSnackBar('Delete succes', 'done')
+        this.getUserList();
+      },
+      error: console.log,
+      
+    })
+  }
+
+  openEditForm(data: any) {
+    const dialogRef = this._dialog.open(UserAddEditComponent, {
+      data
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (val) => {
+        if (val) {
+        this.getUserList();
+        }
+      }
+    })
   }
 }

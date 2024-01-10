@@ -1,25 +1,15 @@
-
-      <p>Email: {{ user.email }}</p>
-      <p>Date of Birth: {{ user.dob | date:'longDate' }}</p>
-      <!-- Add other user fields here as needed -->
-  
-      <!-- Close Button -->
-      <button mat-button (click)="closeDetail()">Close</button>
-
-  
 <div class="card">
   <mat-card class="example-card" appearance="outlined">
     <mat-card-header>
       <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
       <mat-card-subtitle>Email: {{ user.email }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src={{user.image}} alt="Photo of a Shiba Inu">
+    <img mat-card-image src="{{ user.image }}" alt="user's image" />
+    <br/>
     <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
+      <p><b>Date of Birth:</b> {{ user.dob | date : "longDate" }}</p>
+      <p><b>Education: </b>{{user.education}}</p>
+      <p><b>Description:</b> {{ user.description }}</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button (click)="closeDetail()">Close</button>

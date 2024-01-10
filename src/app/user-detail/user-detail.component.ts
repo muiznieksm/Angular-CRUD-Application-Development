@@ -12,6 +12,7 @@ export class UserDetailComponent implements OnInit, OnDestroy {
   user: any;
   loading: boolean = true;
   private subscriptions = new Subscription(); // Manage all subscriptions
+  
 
   constructor(
     private route: ActivatedRoute,

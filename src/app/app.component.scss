@@ -7,8 +7,23 @@
 
 .table_container{
   max-width: 1200;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.img{
+  width: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px;
 }
 
 .content_wrapper{
-
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 20px;
+  margin-top: 20px;
 }

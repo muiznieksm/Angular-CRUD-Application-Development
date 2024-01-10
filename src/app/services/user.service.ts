@@ -14,11 +14,19 @@ export class UserService {
     return this._http.post(`${this.apiUrl}`, data);
   }
 
+  updateUser(id: string, data: any): Observable<any> {
+    return this._http.put(`${this.apiUrl}/${id}`, data);
+  }
+
   getUserList(): Observable<any[]> {
     return this._http.get<any[]>(`${this.apiUrl}`);
   }
 
   getUserById(id: string): Observable<any> {
     return this._http.get<any>(`${this.apiUrl}/${id}`);
+  }
+
+  deleteUser(id: number): Observable<any> {
+    return this._http.delete(`http://localhost:3001/user/${id}`)
   }
 }
