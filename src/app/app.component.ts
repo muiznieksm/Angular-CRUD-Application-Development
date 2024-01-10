@@ -5,6 +5,7 @@ import { UserService } from './services/user.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router'; // Import Router
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,11 @@ export class AppComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _dialog: MatDialog, private _userService: UserService) {}
+  constructor(
+    private _dialog: MatDialog, 
+    private _userService: UserService,
+    private router: Router // Inject Router
+  ) {}
 
   ngOnInit(): void {
     this.getUserList();
@@ -40,7 +45,7 @@ export class AppComponent implements OnInit {
   getUserList() {
     this._userService.getUserList().subscribe({
       next: (res) => {
-        this.dataSource = new MatTableDataSource(res)
+        this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
@@ -57,5 +62,10 @@ export class AppComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  // New method to handle row click
+  openUserDetail(userId: string): void {
+    this.router.navigate(['/users', userId]);
   }
 }

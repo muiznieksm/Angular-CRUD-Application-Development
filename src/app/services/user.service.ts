@@ -6,13 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
+  private apiUrl = 'http://localhost:3001/user'; // Define the API URL just once
+  
   constructor(private _http: HttpClient) {}
 
-  addUser(data: any) {
-    return this._http.post('http://localhost:3001/user', data);
+  addUser(data: any): Observable<any> {
+    return this._http.post(`${this.apiUrl}`, data);
   }
 
-  getUserList(): Observable<any> {
-    return this._http.get('http://localhost:3001/user');
+  getUserList(): Observable<any[]> {
+    return this._http.get<any[]>(`${this.apiUrl}`);
+  }
+
+  getUserById(id: string): Observable<any> {
+    return this._http.get<any>(`${this.apiUrl}/${id}`);
   }
 }
