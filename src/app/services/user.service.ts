@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private apiUrl = 'http://localhost:3001/user'; // Define the API URL just once
-  
+
   constructor(private _http: HttpClient) {}
 
   addUser(data: any): Observable<any> {
@@ -27,6 +27,6 @@ export class UserService {
   }
 
   deleteUser(id: number): Observable<any> {
-    return this._http.delete(`http://localhost:3001/user/${id}`)
+    return this._http.delete(`http://localhost:3001/user/${id}`);
   }
 }

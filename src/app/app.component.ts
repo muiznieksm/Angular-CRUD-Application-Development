@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private _dialog: MatDialog, 
+    private _dialog: MatDialog,
     private _userService: UserService,
     private router: Router,
     private _coreService: CoreService
@@ -45,10 +45,10 @@ export class AppComponent implements OnInit {
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-        this.getUserList();
+          this.getUserList();
         }
-      }
-    })
+      },
+    });
   }
 
   getUserList() {
@@ -80,25 +80,24 @@ export class AppComponent implements OnInit {
   deleteUser(id: number) {
     this._userService.deleteUser(id).subscribe({
       next: (res) => {
-        this._coreService.openSnackBar('Delete succes', 'done')
+        this._coreService.openSnackBar('Delete succes', 'done');
         this.getUserList();
       },
       error: console.log,
-      
-    })
+    });
   }
 
   openEditForm(data: any) {
     const dialogRef = this._dialog.open(UserAddEditComponent, {
-      data
+      data,
     });
 
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
-        this.getUserList();
+          this.getUserList();
         }
-      }
-    })
+      },
+    });
   }
 }

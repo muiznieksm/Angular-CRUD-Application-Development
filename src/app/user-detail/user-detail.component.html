@@ -5,14 +5,16 @@
       <mat-card-subtitle>Email: {{ user.email }}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="{{ user.image }}" alt="user's image" />
-    <br/>
+    <br />
     <mat-card-content>
       <p><b>Date of Birth:</b> {{ user.dob | date : "longDate" }}</p>
-      <p><b>Education: </b>{{user.education}}</p>
+      <p><b>Education: </b>{{ user.education }}</p>
       <p><b>Description:</b> {{ user.description }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="closeDetail()">Close</button>
+      <button mat-raised-button color="primary" (click)="closeDetail()">
+        Close
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

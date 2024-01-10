@@ -10,7 +10,6 @@ import { CoreService } from '../core/core.service';
   styleUrls: ['./user-add-edit.component.scss'],
 })
 export class UserAddEditComponent implements OnInit {
-  
   userForm: FormGroup;
 
   education: string[] = [
@@ -26,7 +25,7 @@ export class UserAddEditComponent implements OnInit {
     private _userService: UserService,
     private _dialogRef: MatDialogRef<UserAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _coreService: CoreService,
+    private _coreService: CoreService
   ) {
     this.userForm = this._fb.group({
       image: '',
@@ -36,7 +35,7 @@ export class UserAddEditComponent implements OnInit {
       dob: '',
       gender: '',
       education: '',
-      description: ''
+      description: '',
     });
   }
 
@@ -51,7 +50,7 @@ export class UserAddEditComponent implements OnInit {
           .updateUser(this.data.id, this.userForm.value)
           .subscribe({
             next: (val: any) => {
-              this._coreService.openSnackBar('Updated seccesfuly')
+              this._coreService.openSnackBar('Updated seccesfuly');
               this._dialogRef.close(true);
             },
             error: (error: any) => {
@@ -61,7 +60,7 @@ export class UserAddEditComponent implements OnInit {
       } else {
         this._userService.addUser(this.userForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('Adedd seccesfuly')
+            this._coreService.openSnackBar('Adedd seccesfuly');
             this._dialogRef.close(true);
           },
           error: (error: any) => {
