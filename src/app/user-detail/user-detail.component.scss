@@ -1,12 +1,18 @@
 .example-card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://picsum.photos/400');
-    background-size: cover;
-  }
+  max-width: 400px;
+}
 
-  .card{
-    padding-bottom: 20px;
-  }
+.example-header-image {
+  background-image: url("https://picsum.photos/400");
+  background-size: cover;
+}
+
+.card {
+  padding-bottom: 20px;
+}
+
+.card_img {
+  width: 20px;
+  aspect-ratio: 16/9;
+  border: 1px solid;
+}

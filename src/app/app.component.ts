@@ -16,6 +16,7 @@ import { CoreService } from './core/core.service';
 export class AppComponent implements OnInit {
   displayedColumns: string[] = [
     'image',
+    'country',
     'firstName',
     'lastName',
     'email',
@@ -38,6 +39,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserList();
+  }
+
+  // Method to get the URL for the country flag
+  getCountryFlagUrl(country: string): string {
+    return `https://cdn.countryflags.com/thumbs/${country
+      ?.toLowerCase()
+      .replaceAll(' ', '-')}/flag-400.png`;
   }
 
   openAddEditUserForm() {
@@ -80,7 +88,7 @@ export class AppComponent implements OnInit {
   deleteUser(id: number) {
     this._userService.deleteUser(id).subscribe({
       next: (res) => {
-        this._coreService.openSnackBar('Delete succes', 'done');
+        this._coreService.openSnackBar('Delete success', 'done');
         this.getUserList();
       },
       error: console.log,

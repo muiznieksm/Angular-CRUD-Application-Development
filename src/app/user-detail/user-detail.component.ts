@@ -6,13 +6,12 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.scss']
+  styleUrls: ['./user-detail.component.scss'],
 })
 export class UserDetailComponent implements OnInit, OnDestroy {
   user: any;
   loading: boolean = true;
   private subscriptions = new Subscription(); // Manage all subscriptions
-  
 
   constructor(
     private route: ActivatedRoute,
@@ -22,14 +21,14 @@ export class UserDetailComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptions.add(
-      this.route.params.subscribe(params => {
+      this.route.params.subscribe((params) => {
         const userId = params['id'];
         this.userService.getUserById(userId).subscribe(
-          user => {
+          (user) => {
             this.user = user;
             this.loading = false; // Set loading to false when data is received
           },
-          error => {
+          (error) => {
             // Handle error state
             console.error('Error fetching user:', error);
             this.loading = false; // Set loading to false even on error
@@ -37,6 +36,13 @@ export class UserDetailComponent implements OnInit, OnDestroy {
         );
       })
     );
+  }
+
+  // Method to get the URL for the country flag
+  getCountryFlagUrl(country: string): string {
+    return `https://cdn.countryflags.com/thumbs/${country
+      ?.toLowerCase()
+      .replaceAll(' ', '-')}/flag-400.png`;
   }
 
   // Implement the closeDetail method

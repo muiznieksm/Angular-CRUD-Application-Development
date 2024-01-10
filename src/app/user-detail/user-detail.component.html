@@ -1,8 +1,16 @@
 <div class="card">
   <mat-card class="example-card" appearance="outlined">
     <mat-card-header>
-      <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
-      <mat-card-subtitle>Email: {{ user.email }}</mat-card-subtitle>
+      <mat-card-title
+        >{{ user.firstName }} {{ user.lastName }}
+        <img
+          src="{{ getCountryFlagUrl(user.country) }}"
+          alt="{{ user.country }}"
+          class="card_img"
+      /></mat-card-title>
+      <mat-card-subtitle
+        ><p><b>From: </b>{{ user.country }}</p></mat-card-subtitle
+      >
     </mat-card-header>
     <img mat-card-image src="{{ user.image }}" alt="user's image" />
     <br />
@@ -10,6 +18,7 @@
       <p><b>Date of Birth:</b> {{ user.dob | date : "longDate" }}</p>
       <p><b>Education: </b>{{ user.education }}</p>
       <p><b>Description:</b> {{ user.description }}</p>
+      <p><b>Email: </b>{{ user.email }}</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" (click)="closeDetail()">

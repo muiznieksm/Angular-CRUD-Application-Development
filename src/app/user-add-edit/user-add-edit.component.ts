@@ -36,6 +36,7 @@ export class UserAddEditComponent implements OnInit {
       gender: '',
       education: '',
       description: '',
+      country: '',
     });
   }
 
