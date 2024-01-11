@@ -11,12 +11,12 @@ import { Subscription } from 'rxjs';
 export class UserDetailComponent implements OnInit, OnDestroy {
   user: any;
   loading: boolean = true;
-  private subscriptions = new Subscription(); // Manage all subscriptions
+  private subscriptions = new Subscription();
 
   constructor(
     private route: ActivatedRoute,
     private userService: UserService,
-    private router: Router // Inject Router for navigation
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -26,31 +26,28 @@ export class UserDetailComponent implements OnInit, OnDestroy {
         this.userService.getUserById(userId).subscribe(
           (user) => {
             this.user = user;
-            this.loading = false; // Set loading to false when data is received
+            this.loading = false;
           },
           (error) => {
-            // Handle error state
             console.error('Error fetching user:', error);
-            this.loading = false; // Set loading to false even on error
+            this.loading = false;
           }
         );
       })
     );
   }
 
-  // Method to get the URL for the country flag
   getCountryFlagUrl(country: string): string {
     return `https://cdn.countryflags.com/thumbs/${country
       ?.toLowerCase()
       .replaceAll(' ', '-')}/flag-400.png`;
   }
 
-  // Implement the closeDetail method
   closeDetail(): void {
-    this.router.navigate(['/']); // Navigate back to the user list
+    this.router.navigate(['/']);
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.unsubscribe(); // Unsubscribe from all subscriptions
+    this.subscriptions.unsubscribe();
   }
 }

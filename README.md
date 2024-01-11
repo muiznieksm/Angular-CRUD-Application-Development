@@ -1,37 +1,61 @@
-# Crud
+<head>
+    <title>Project README</title>
+</head>
+<body>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+<h1>Project Title</h1>
+<p>This is a user management application built with Angular. It utilizes Angular Material for the user interface and relies on a mock backend provided by json-server.</p>
 
-## Development server
+<h2>Getting Started</h2>
+<p>These instructions will guide you through setting up and running the application on your local machine for development and testing purposes.</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-
-<h1><b>To run this project:</b></h1>
-
+<h3>Prerequisites</h3>
+<p>Before running this project, ensure you have the following installed:</p>
 <ul>
-<li>Step 1: npm install</li>
-<li>Step 2: ng serve</li>
-<li>Step 3: To run db.json: npx json-server --watch db.json --port 3001</li>
+    <li>Node.js</li>
+    <li>npm (Node Package Manager)</li>
+    <li>Angular CLI</li>
 </ul>
+
+<h3>Installation</h3>
+<p>Follow these steps to set up the project environment:</p>
+
+<h4>Step 1: Install Dependencies</h4>
+<p>Run <code>npm install</code> in the project directory to install all the required dependencies.</p>
+<pre><code>npm install</code></pre>
+
+<h4>Step 2: Start the Angular Development Server</h4>
+<p>Execute <code>ng serve</code> to start the Angular development server. This will compile the application and serve it usually at <a href="http://localhost:4200">http://localhost:4200</a>.</p>
+<pre><code>ng serve</code></pre>
+<p>Navigate to <a href="http://localhost:4200">http://localhost:4200</a> in your browser to view the application.</p>
+
+<h4>Step 3: Run the Mock Backend Server</h4>
+<p>To set up and run the mock backend server, execute the following command. This starts json-server on port 3001, watching changes to db.json.</p>
+<pre><code>npx json-server --watch db.json --port 3001</code></pre>
+
+<h3>Features</h3>
+<ul>
+    <li>CRUD operations for user data</li>
+    <li>Reactive Forms for adding and editing user information</li>
+    <li>Angular Material UI components</li>
+    <li>Table display with sorting, filtering, and pagination</li>
+    <li>Integration with json-server for a mock backend</li>
+</ul>
+
+<h3>Built With</h3>
+<ul>
+    <li><a href="https://angular.io/">Angular</a> - The web framework used</li>
+    <li><a href="https://material.angular.io/">Angular Material</a> - Material Design components for Angular</li>
+    <li><a href="https://github.com/typicode/json-server">json-server</a> - Full fake REST API for mock backend</li>
+</ul>
+
+<h3>Author</h3>
+<p>Mārtiņš Muižnieks</p>
+
+<h3>Acknowledgments</h3>
+<ul>
+    <li>Angular and Angular Material documentation</li>
+    <li>json-server for providing an easy-to-use mock backend setup</li>
+</ul>
+
+</body>

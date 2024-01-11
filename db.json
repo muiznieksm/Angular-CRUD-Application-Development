@@ -13,18 +13,6 @@
       "id": "b929e6f2-0031-471c-a7ca-8b8431c7aea3"
     },
     {
-      "id": "e8b4c63d88458418a1dffb5847105d2d",
-      "image": "https://picsum.photos/965",
-      "firstName": "Bob",
-      "lastName": "Davis",
-      "email": "bobdavis@example.com",
-      "dob": "1990-03-26",
-      "gender": "male",
-      "education": "Undergraduate Education",
-      "country": "Armenia",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut"
-    },
-    {
       "id": "dd67c842fb1e93c5b8fe1565aee17f62",
       "image": "https://picsum.photos/963",
       "firstName": "Jane",
@@ -1211,18 +1199,6 @@
       "education": "Undergraduate Education",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut",
       "country": "Laos"
-    },
-    {
-      "id": "e8b4c63d88458418a1dffb5847105d2d",
-      "image": "https://picsum.photos/962",
-      "firstName": "Bob",
-      "lastName": "Davis",
-      "email": "bobdavis@example.com",
-      "dob": "1990-03-26",
-      "gender": "male",
-      "education": "Undergraduate Education",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut",
-      "country": "Eswatini"
     }
   ]
 }
